@@ -3,7 +3,7 @@
 }
 
 .HomeBackground {
-    margin-right: 900px;
+    margin-left: 700px;
 }
 
 .nav-link {
@@ -17,6 +17,7 @@ li {
 
 .aboutusimage {
     margin-left: 850px;
+    margin-bottom: 100px;
 }
 
 li:after {
@@ -41,4 +42,10 @@ li:hover:after {
     ul {
         margin-top: 40px;
     }
+}
+
+.Transaction,
+.money {
+    margin-top: 250px;
+    margin-left: 1000px;
 }

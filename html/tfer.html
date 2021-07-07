@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Banking App</title>
+    <link rel="stylesheet" href="/Bank.css">
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
+    <style>
+        .transb {
+            padding: 12px 24px 12px 24px;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            background-color: white;
+            border: 1px solid #F5F4F4;
+            width: 200px;
+            cursor: pointer;
+        }
+        
+        .card {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            transition: 0.3s;
+            border-radius: 25px;
+            margin-left: 25vw;
+            margin-top: 20vh;
+            position: absolute;
+            width: 50vw;
+            height: 50vh;
+            background-color: rgb(255, 190, 15, 0.8);
+        }
+        
+        .card:hover {
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+        }
+        
+        .container {
+            padding: 10px 10px;
+            text-align: center;
+            line-height: 2.5;
+        }
+        
+        #amount {
+            border-radius: 50px;
+            border: 1px solid #F5F4F4;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <div class="transferPage" style="border:1px solid black"> -->
+    <div class="main">
+        <div id="ellipse"> </div>
+        <div class="starting">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a>Transaction</a></li>
+                <li><a href="transfer.html">Money Transfer</a></li>
+                <li><a href="login.html">Logout</a></li>
+            </ul>
+        </div>
+        <div class="card">
+            <div class="container">
+                <h1>Money Transfer</h1>
+                <h4>Name : <span id='name'></span></h4>
+                <h4>Email : <span id='email'></span></h4>
+                <h4>Balance : <span id='balance'></span></h4>
+                <h4>Amount To Transfer : <input id='amount' type="number" /></h4>
+                <button class="transb">Transfer</button>
+            </div>
+        </div>
+    </div>
+    <div class="Footer">
+        &copy; Devanshi Patel
+    </div>
+</body>
+
+</html>
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+<script>
+    $.post('getT', (data) => {
+        if (data.toString() == "0") location.assign('transfer.html')
+        console.table(data);
+        var elem = data[0];
+        $("#name").text(data[0].name);
+        $("#email").text(data[0].email);
+        $("#balance").text(data[0].balance);
+        $("body").show();
+        $("button").click(function() {
+            $.post("transactIt", {
+                id: data[0].id,
+                amount: $("#amount").val()
+            }, function(data) {
+                alert(data);
+                location.assign('transfer.html');
+            })
+        });
+    });
+    $("button").hide();
+    $("#amount").keyup(function() {
+        if ($(this).val() > 0) $("button").show();
+        else $("button").hide();
+    });
+</script>

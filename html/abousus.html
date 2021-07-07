@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/index.css">
 
     <title>About us</title>
 
@@ -26,16 +26,16 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <a class="navbar-brand mr-auto" href="index.html"><img src="/Photo_used/logo/download.png" alt="logo" width="35px" height="35.5px">&#160&#160 Fleet World Bank</a>
+                <a class="navbar-brand mr-auto" href="/html/index.html"><img src="/Photo_used/logo/download.png" alt="logo" width="35px" height="35.5px">&#160&#160 Fleet World Bank</a>
             </div>
 
             <div class="collapse navbar-collapse" id="NavBar">
 
                 <ul class="nav navbar-nav ml-auto">
-                    <li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
-                    <li class="nav-item"><a href="abousus.html" class="nav-link">About us</a></li>
-                    <li class="nav-item"><a href="moneyTransfer.html" class="nav-link">Money Transfer</a></li>
-                    <li class="nav-item"><a href="Transaction.html" class="nav-link">Transaction</a></li>
+                    <li class="nav-item "><a href="/html/index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item active"><a href="/html/abousus.html" class="nav-link">About us</a></li>
+                    <li class="nav-item"><a href="/html/moneyTransfer.html" class="nav-link">Money Transfer</a></li>
+                    <li class="nav-item"><a href="/html/Transaction.html" class="nav-link">Transaction Details</a></li>
 
                 </ul>
             </div>
@@ -46,7 +46,7 @@
     <div class="jumbotron">
         <div class="container">
             <div class="row">
-                <div class="col">
+                <div class="col-12">
                     <label for="company"><h2>Company Overview</h2></label>
 
                 </div>
@@ -56,9 +56,17 @@
 
     <div class="container">
         <div class="row">
+            <ol class="col breadcrumb">
+                <li class="breadcrumb-item"><a href="/html/index.html">Home</a></li>
+                <li class="breadcrumb-item active">About us</li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
             <div class="col">
                 <div>
-
                     <label><h4>Fleet World Bank</h4></label>
                     <p>Fleet world Bank is one of the world’s leading financial institutions, serving individual consumers, small and middle-market businesses and large corporations with a full range of banking, investing, asset management and other financial
                         and risk management products and services. </p>
@@ -66,15 +74,23 @@
                     <p>The company provides unmatched convenience in the United States, serving approximately 66 million consumer and small business clients with approximately 4,300 retail financial centers, including approximately 2,700 lending centers,
                         2,600 financial centers with a Consumer Investment Financial Solutions Advisor and approximately 2,400 business centers; approximately 17,000 ATMs; and award-winning digital banking with approximately 40 million active users, including
                         approximately 31 million mobile users.</p>
-                    <img src="Photo_used/AbousUs.jpg" width=250px class="aboutusimage"> </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col d-none d-md-block">
+                <img src="/Photo_used/AbousUs.jpg" width=250px class="aboutusimage">
             </div>
         </div>
     </div>
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS. -->
-    <script src="node_modules/jquery/dist/jquery.slim.min.js "></script>
-    <script src="node_modules/popper.js/dist/umd/popper.min.js "></script>
-    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js "></script>
+    <script src="/node_modules/jquery/dist/jquery.slim.min.js "></script>
+    <script src="/node_modules/popper.js/dist/umd/popper.min.js "></script>
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js "></script>
 
 </body>
 
