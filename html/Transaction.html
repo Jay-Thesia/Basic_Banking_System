@@ -8,8 +8,8 @@
 
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/index.css">
 
     <title>Transfer History</title>
 </head>
@@ -24,16 +24,16 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <a class="navbar-brand mr-auto" href="index.html"><img src="/Photo_used/logo/download.png" alt="logo" width="35px" height="35.5px">&#160&#160 Fleet World Bank</a>
+                <a class="navbar-brand mr-auto" href="../html/index.html"><img src="../Photo_used/logo/download.png" alt="logo" width="35px" height="35.5px">&#160&#160 Fleet World Bank</a>
             </div>
 
             <div class="collapse navbar-collapse" id="NavBar">
 
                 <ul class="nav navbar-nav ml-auto">
-                    <li class="nav-item "><a href="/html/index.html" class="nav-link">Home</a></li>
-                    <li class="nav-item"><a href="/html/abousus.html" class="nav-link">About us</a></li>
-                    <li class="nav-item"><a href="/html/moneyTransfer.html" class="nav-link">Money Transfer</a></li>
-                    <li class="nav-item active"><a href="/html/Transaction.html" class="nav-link">Transaction Details</a></li>
+                    <li class="nav-item "><a href="../html/index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="../html/abousus.html" class="nav-link">About us</a></li>
+                    <li class="nav-item"><a href="../html/moneyTransfer.html" class="nav-link">Money Transfer</a></li>
+                    <li class="nav-item active"><a href="../html/Transaction.html" class="nav-link">Transaction Details</a></li>
 
                 </ul>
             </div>
@@ -56,26 +56,149 @@
     <div class="container">
         <div class="row">
             <ol class="col breadcrumb">
-                <li class="breadcrumb-item"><a href="/html/index.html">Home</a></li>
-                <li class="breadcrumb-item "><a href="/html/moneyTransfer.html">Money Transfer</a></li>
+                <li class="breadcrumb-item"><a href="../html/index.html">Home</a></li>
+                <li class="breadcrumb-item "><a href="../html/moneyTransfer.html">Money Transfer</a></li>
                 <li class="breadcrumb-item active">Transaction Details</li>
             </ol>
         </div>
     </div>
 
+    <!--table-->
     <div class="container">
-        <div class="row">
-            <div class="col Transaction">
-                <img src="/Photo_used/circle-transection.png" alt="Wallet photo" width="100px" height="100px">
+        <button class="btn btn-primary offset-5" data-toggle="modal" data-target="#sendMoney">Transfer Amount</button>
+        <hr>
+
+        <!--table-->
+
+        <div class="table-responsive">
+            <table id="myTable" class="table table-hover table-bordered table-striped">
+                <thead>
+                    <tr class="table-info">
+                        <th scope="col">Transfer From</th>
+                        <th scope="col">Transfer To</th>
+                        <th scope="col">Amount Transfered(Rs)</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <td>avika</td>
+                        <td>rituka</td>
+                        <td>
+                            <p id="Balance">15000</p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>yogesh</td>
+                        <td>avika</td>
+                        <td>
+                            <p id="Balance">8000</p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>yogesh</td>
+                        <td>shantanu</td>
+                        <td>
+                            <p id="Balance">9000</p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>sanskar</td>
+                        <td>tanya</td>
+                        <td>
+                            <p id="Balance">6500</p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>ved</td>
+                        <td>simar</td>
+                        <td>
+                            <p id="Balance">58000</p>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+
+            <!-- Modal send money -->
+            <div class="modal fade" id="sendMoney" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Transfer Amount</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        </div>
+                        <div class="modal-body">
+                            <form method="post" onsubmit="return sendMoney();">
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">Transfer From</span>
+                                    </div>
+                                    <input type="text" id="TransferFrom" class="form-control text-dark" placeholder="Enter the First Name" aria-label="username1" aria-describedby="basic-addon2">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text" id="basic-addon2"></span>
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">Transfer To</span>
+                                        </div>
+                                        <input type="text" id="TransferTo" class="form-control text-dark" placeholder="Enter the First Name" aria-label="username2" aria-describedby="basic-addon2">
+                                        <div class="input-group-append">
+                                            <span class="input-group-text" id="basic-addon2"></span>
+                                        </div>
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">Rs.</span>
+                                        </div>
+                                        <input type="text" id="enterAmount" class="form-control text-dark" placeholder="Amount" aria-label="Amount ">
+                                        <div class="input-group-append">
+                                            <span class="input-group-text"></span>
+                                        </div>
+                                    </div>
+                            </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <input type="submit" class="btn btn-success" value="Send" data-dismiss="modal" onclick="sendMoney()">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tm-row">
+                    <div class="tm-col-left text-center">
+                        <ul class="tm-bg-controls-wrapper">
+                            <li class="tm-bg-control active" data-id="0"></li>
+                            <li class="tm-bg-control" data-id="1"></li>
+                            <li class="tm-bg-control" data-id="2"></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="tm-bg">
+                    <div class="tm-bg-left"></div>
+                    <div class="tm-bg-right"></div>
+                </div>
             </div>
-        </div>
-    </div>
 
-    <!-- scripts use in toggle you remember -->
-    <script src="/node_modules/jquery/dist/jquery.slim.min.js"></script>
-    <script src="/node_modules/popper.js/dist/umd/popper.min.js"></script>
-    <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 
+
+            <div class="container">
+                <div class="row">
+                    <div class="col Transaction">
+                        <img src="../Photo_used/circle-transection.png" alt="Wallet photo" width="100px" height="100px">
+                    </div>
+                </div>
+            </div>
+
+            <!-- scripts use in toggle you remember -->
+            <script src="../js/index.js"></script>
+            <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </body>
 
 </html>
