@@ -9,6 +9,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <link rel="stylesheet" href="../css/index.css">
 
     <title>Transfer History</title>
@@ -30,11 +31,10 @@
             <div class="collapse navbar-collapse" id="NavBar">
 
                 <ul class="nav navbar-nav ml-auto">
-                    <li class="nav-item "><a href="../html/index.html" class="nav-link">Home</a></li>
-                    <li class="nav-item"><a href="../html/abousus.html" class="nav-link">About us</a></li>
-                    <li class="nav-item"><a href="../html/moneyTransfer.html" class="nav-link">Money Transfer</a></li>
-                    <li class="nav-item active"><a href="../html/Transaction.html" class="nav-link">Transaction
-                            Details</a></li>
+                    <li class="nav-item "><a href="../html/index.html" class="nav-link fa fa-home"> Home</a></li>
+                    <li class="nav-item"><a href="../html/abousus.html " class="nav-link fa fa-info"> About us</a></li>
+                    <li class="nav-item "><a href="../html/moneyTransfer.html " class="nav-link fa fa-money-bill" aria-hidden="true"> Money Transfer</a></li>
+                    <li class="nav-item active "><a href="../html/Transaction.html " class="nav-link fa fa-hands-usd"> Transaction Details</a></li>
 
                 </ul>
             </div>
@@ -68,7 +68,10 @@
 
     <!--table-->
     <div class="container">
-        <button class="btn btn-primary offset-5" data-toggle="modal" data-target="#sendMoney">Transfer Amount</button>
+        <form class="text-center">
+            <script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_HaozFYOBQxONWu" async>
+            </script>
+        </form>
         <hr>
 
         <!--table-->
@@ -85,40 +88,40 @@
                 <tbody>
 
                     <tr>
-                        <td>avika</td>
-                        <td>rituka</td>
+                        <td>Michael Jordan</td>
+                        <td>David Goggins</td>
                         <td>
                             <p id="Balance">15000</p>
                         </td>
                     </tr>
 
                     <tr>
-                        <td>yogesh</td>
-                        <td>avika</td>
+                        <td>Koby Bryant</td>
+                        <td>Naval Ravikant</td>
                         <td>
                             <p id="Balance">8000</p>
                         </td>
                     </tr>
 
                     <tr>
-                        <td>yogesh</td>
-                        <td>shantanu</td>
+                        <td>Thala7</td>
+                        <td>Michael Jordan</td>
                         <td>
                             <p id="Balance">9000</p>
                         </td>
                     </tr>
 
                     <tr>
-                        <td>sanskar</td>
-                        <td>tanya</td>
+                        <td>Virat Kohli</td>
+                        <td>SRK</td>
                         <td>
                             <p id="Balance">6500</p>
                         </td>
                     </tr>
 
                     <tr>
-                        <td>ved</td>
-                        <td>simar</td>
+                        <td>David Googins</td>
+                        <td>Indra</td>
                         <td>
                             <p id="Balance">58000</p>
                         </td>
@@ -129,81 +132,7 @@
         </div>
     </div>
 
-    <!-- Modal send money -->
-    <div class="modal fade" id="sendMoney" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Transfer Amount</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                            aria-hidden="true">&times;</span></button>
-                </div>
-                <div class="modal-body">
-                    <form method="post" onsubmit="return sendMoney();">
-                        <div class="input-group mb-3">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text">Transfer From</span>
-                            </div>
 
-                            <input type="text" id="TransferFrom" class="form-control text-dark" placeholder="Enter the First Name" aria-label="username1" aria-describedby="basic-addon2">
-                            <div class="input-group-append">
-                                <span class="input-group-text" id="basic-addon2"></span>
-                            </div>
-
-                            <div class="input-group mb-3">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text">Transfer To</span>
-                                </div>
-
-                                <input type="text" id="TransferTo" class="form-control text-dark" placeholder="Enter the First Name" aria-label="username2" aria-describedby="basic-addon2">
-                                <div class="input-group-append">
-                                    <span class="input-group-text" id="basic-addon2"></span>
-                                </div>
-
-                            </div>
-
-                            <div class="input-group mb-3">
-
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text">Rs.</span>
-                                </div>
-
-                                <input type="text" id="enterAmount" class="form-control text-dark" placeholder="Amount" aria-label="Amount ">
-                                <div class="input-group-append">
-                                    <span class="input-group-text"></span>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-
-
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <input type="submit" class="btn btn-success" value="Send" data-dismiss="modal" onclick="sendMoney()">
-                    </div>
-                </div>
-
-
-                <div class="tm-row">
-                    <div class="tm-col-left text-center">
-                        <ul class="tm-bg-controls-wrapper">
-                            <li class="tm-bg-control active" data-id="0"></li>
-                            <li class="tm-bg-control" data-id="1"></li>
-                            <li class="tm-bg-control" data-id="2"></li>
-                        </ul>
-                    </div>
-                </div>
-
-
-                <div class="tm-bg">
-                    <div class="tm-bg-left"></div>
-                    <div class="tm-bg-right"></div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-    </div>
 
     <div class="container">
         <div class="row">
@@ -212,6 +141,48 @@
             </div>
         </div>
     </div>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-3">
+                    <h5>links</h5>
+                    <a href="../html/index.html" class="fa fa-home">Home</a>
+                    <br>
+                    <a href="../html/abousus.html " class=" fa fa-info"> About us</a>
+                    <br>
+                    <a href="../html/moneyTransfer.html " class="fa fa-money-bill" aria-hidden="true"> Money Transfer</a>
+                    <a href="../html/Transaction.html " class=" fa fa-hands-usd"> Transaction Details</a>
+
+                </div>
+
+
+                <div class="col-4">
+                    <address><h5>Address</h5></address>
+                    <p>1600 Amphitheatre Parkway Mountain View, CA 94043</p>
+                </div>
+
+                <div class="col-3">
+                    <h5>Handles</h5>
+                    <a href="http://google.com/+"><span class=" fab fa-google"></span></a>
+                    <a href="http://www.facebook.com/profile.php?id=100018640623122"><span class="fab fa-facebook " ></span></a>
+                    <a href=" https://www.linkedin.com/in/jay-thesia-76830b1ab"><span class="fab fa-linkedin "></span></a>
+                    <a href="https://twitter.com/thisisjbt"><span class="fab fa-twitter "></span></a>
+                    <a href="https://www.youtube.com/channel/UCvuJ6UsnBrpLNvbaVITyJFA"><span class="fab fa-youtube "></span></a>
+                    <a href="mailto:jayengineer.j2410@gmail.com"><span class="fa fa-envelope "></span></a>
+                </div>
+            </div>
+
+            <div class="row love">
+                <div class="col-12">
+                    <label for="form-control-check">Engineered with <span class="fa fa-heart fa-spin"></span></label>
+                    <label for=""> By</label>
+                    <img src="../Photo_used/myName.png" alt="myname" class="myname">
+
+                </div>
+            </div>
+        </div>
+    </footer>
 
 
     <!-- scripts use in toggle you remember -->

@@ -8,6 +8,7 @@
     <title>Money Transfer</title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <link rel="stylesheet" href="../css/index.css">
 </head>
 
@@ -29,10 +30,10 @@
             <div class="collapse navbar-collapse" id="NavBar">
 
                 <ul class="nav navbar-nav ml-auto">
-                    <li class="nav-item "><a href="../html/index.html" class="nav-link">Home</a></li>
-                    <li class="nav-item"><a href="../html/abousus.html" class="nav-link">About us</a></li>
-                    <li class="nav-item active"><a href="../html/moneyTransfer.html" class="nav-link">Money Transfer</a></li>
-                    <li class="nav-item"><a href="../html/Transaction.html" class="nav-link">Transaction Details</a></li>
+                    <li class="nav-item "><a href="../html/index.html" class="nav-link fa fa-home"> Home</a></li>
+                    <li class="nav-item"><a href="../html/abousus.html " class="nav-link fa fa-info"> About us</a></li>
+                    <li class="nav-item active "><a href="../html/moneyTransfer.html " class="nav-link fa fa-money-bill" aria-hidden="true"> Money Transfer</a></li>
+                    <li class="nav-item "><a href="../html/Transaction.html " class="nav-link fa fa-hands-usd"> Transaction Details</a></li>
 
                 </ul>
             </div>
@@ -68,77 +69,19 @@
             <h2>Name: JAY THESIA</h2>
             <h4>Net Balance: ₹<span id="myAccountBalance">78600000</span></h4>
 
-            <button class="btn btn-primary btn-info btn-lg" data-toggle="modal" data-target="#sendMoney">Send
-                Money</button>
-            <a class="btn btn-primary btn-info btn-lg" href="" data-toggle="modal" data-target="#transactionHistory">Transaction History</a>
+            <form action="">
+                <script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_HaozFYOBQxONWu" async>
+                </script>
+            </form>
+            <a class="btn btn-primary btn-info " href="" data-toggle="modal" data-target="#transactionHistory">Transaction History</a>
+
         </div>
 
-        <!-- Modal send money -->
-        <div class="modal fade" id="sendMoney" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Send Money</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <form action="">
-                            <div class="input-group mb-3">
-                                <input type="text" id="enterName" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
-                                <div class="input-group-append">
-                                    <span class="input-group-text" id="basic-addon2">@email.com</span>
-                                </div>
-                            </div>
-                            <div class="input-group mb-3">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text">$</span>
-                                </div>
-                                <input type="text" id="enterAmount" class="form-control" placeholder=" Enter Amount" aria-label="Amount (to the nearest dollar)">
-                                <div class="input-group-append">
-                                    <span class="input-group-text">.00</span>
-                                </div>
-                            </div>
-
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" onclick="sendMoney()" class="btn btn-success" data-dismiss="modal">Send
-                            Money</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Modal send money ends here-->
-
-
-        <!-- Modal transaction History-->
-        <div class="modal fade" id="transactionHistory" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Transaction History</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <ol id="transaction-history-body">
-
-                        </ol>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
-        </div>
 
         <br>
         <!-- table  -->
         <div class="container">
+
             <div class="table-responsive">
                 <table class="table table-hover table-striped table-bordered">
                     <thead>
@@ -242,17 +185,56 @@
                 </table>
             </div>
         </div>
+    </div>
 
-        <div class="container">
-            <div class="row">
-                <div class="col d-none d-sm-block money">
-                    <img src="../Photo_used/MoneyTransfer.jpg" alt="money" width="150px">
-                </div>
-
+    <div class="container">
+        <div class="row">
+            <div class="col d-none d-sm-block money">
+                <img src="../Photo_used/Mobile bank users transferring money.jpg" alt="money" width="150px">
             </div>
-
         </div>
     </div>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-3">
+                    <h5>links</h5>
+                    <a href="../html/index.html" class="fa fa-home">Home</a>
+                    <br>
+                    <a href="../html/abousus.html " class=" fa fa-info"> About us</a>
+                    <br>
+                    <a href="../html/moneyTransfer.html " class="fa fa-money-bill" aria-hidden="true"> Money Transfer</a>
+                    <a href="../html/Transaction.html " class=" fa fa-hands-usd"> Transaction Details</a>
+
+                </div>
+
+
+                <div class="col-4">
+                    <address><h5>Address</h5></address>
+                    <p>1600 Amphitheatre Parkway Mountain View, CA 94043</p>
+                </div>
+
+                <div class="col-3">
+                    <h5>Handles</h5>
+                    <a href="http://google.com/+"><span class=" fab fa-google"></span></a>
+                    <a href="http://www.facebook.com/profile.php?id=100018640623122"><span class="fab fa-facebook " ></span></a>
+                    <a href=" https://www.linkedin.com/in/jay-thesia-76830b1ab"><span class="fab fa-linkedin "></span></a>
+                    <a href="https://twitter.com/thisisjbt"><span class="fab fa-twitter "></span></a>
+                    <a href="https://www.youtube.com/channel/UCvuJ6UsnBrpLNvbaVITyJFA"><span class="fab fa-youtube "></span></a>
+                    <a href="mailto:jayengineer.j2410@gmail.com"><span class="fa fa-envelope "></span></a>
+                </div>
+            </div>
+
+            <div class="row love">
+                <div class="col-12">
+                    <label for="form-control-check">Engineered with <span class="fa fa-heart fa-spin"></span></label>
+                    <label for=""> By</label>
+                    <img src="../Photo_used/myName.png" alt="myname" class="myname">
+
+                </div>
+            </div>
+        </div>
+    </footer>
 
 
 

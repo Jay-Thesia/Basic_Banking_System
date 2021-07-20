@@ -11,6 +11,9 @@
     <!-- bootstrap css -->
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+
     <link rel="stylesheet" href="../css/index.css">
     <title>Fleet Banking System</title>
 </head>
@@ -56,10 +59,10 @@
             <div class="collapse navbar-collapse" id="NavBar">
 
                 <ul class="nav navbar-nav ml-auto">
-                    <li class="nav-item active"><a href="../html/index.html" class="nav-link">Home</a></li>
-                    <li class="nav-item"><a href="../html/abousus.html " class="nav-link">About us</a></li>
-                    <li class="nav-item "><a href="../html/moneyTransfer.html " class="nav-link">Money Transfer</a></li>
-                    <li class="nav-item "><a href="../html/Transaction.html " class="nav-link">Transaction Details</a></li>
+                    <li class="nav-item active"><a href="../html/index.html" class="nav-link fa fa-home"> Home</a></li>
+                    <li class="nav-item"><a href="../html/abousus.html " class="nav-link fa fa-info"> About us</a></li>
+                    <li class="nav-item "><a href="../html/moneyTransfer.html " class="nav-link fa fa-money-bill" aria-hidden="true"> Money Transfer</a></li>
+                    <li class="nav-item "><a href="../html/Transaction.html " class="nav-link fa fa-hands-usd"> Transaction Details</a></li>
 
 
 
@@ -82,21 +85,86 @@
         </div>
     </header>
 
-    <div class="container ">
-        <div class="row ">
-            <div class="col d-none d-sm-block ">
+    <div class="container">
+        <div class="row row-header">
+            <div class="col-md-5 ">
+                <h2>Fixed Rate Loan <span class="badge badge-danger">New</span></h2>
 
-                <img src="../Photo_used/HomeBackground.png " width="500 " height="500 " class="HomeBackground">
+                <br>
+                <p>Take your financial life online. Your Fleet bank account will be a one-stop-shop for spending. saving, budgeting, investing, and much more</p>
+                <br>
+                <form>
+
+                    <script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_HaozFYOBQxONWu" async>
+                    </script>
+                    <button class="btn btn-info"><a href="../html/aboutme.html" style="color: white;">About me</a></button>
+
+                </form>
+
+
 
             </div>
+            <div class="col-7 d-none d-sm-block ">
+
+                <img src="../Photo_used/HomeBackground.png " width="500 " height="380" class="HomeBackground">
+
+            </div>
+
         </div>
     </div>
 
-    <!-- scripts use in toggle you remember -->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-3">
+                    <h5>links</h5>
+                    <a href="../html/index.html" class="fa fa-home">Home</a>
+                    <br>
+                    <a href="../html/abousus.html " class=" fa fa-info"> About us</a>
+                    <br>
+                    <a href="../html/moneyTransfer.html " class="fa fa-money-bill" aria-hidden="true"> Money Transfer</a>
+                    <a href="../html/Transaction.html " class=" fa fa-hands-usd"> Transaction Details</a>
 
+                </div>
+
+
+                <div class="col-4">
+                    <address><h5>Address</h5></address>
+                    <p>1600 Amphitheatre Parkway Mountain View, CA 94043</p>
+                </div>
+
+                <div class="col-3">
+                    <h5>Handles</h5>
+                    <a href="http://google.com/+"><span class=" fab fa-google"></span></a>
+                    <a href="http://www.facebook.com/profile.php?id=100018640623122"><span class="fab fa-facebook " ></span></a>
+                    <a href=" https://www.linkedin.com/in/jay-thesia-76830b1ab"><span class="fab fa-linkedin "></span></a>
+                    <a href="https://twitter.com/thisisjbt"><span class="fab fa-twitter "></span></a>
+                    <a href="https://www.youtube.com/channel/UCvuJ6UsnBrpLNvbaVITyJFA"><span class="fab fa-youtube "></span></a>
+                    <a href="mailto:jayengineer.j2410@gmail.com"><span class="fa fa-envelope "></span></a>
+                </div>
+            </div>
+
+            <div class="row love">
+                <div class="col-12">
+                    <label for="form-control-check">Engineered with <span class="fa fa-heart fa-spin"></span></label>
+                    <label for=""> By</label>
+                    <img src="../Photo_used/myName.png" alt="myname" class="myname">
+
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- scripts use in toggle you remember -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js " integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n " crossorigin="anonymous "></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js " integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo " crossorigin="anonymous "></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js " integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6 " crossorigin="anonymous "></script>
+    <!-- <script>
+        $(document).ready(function() {
+            $('[data-toggle=tooltip]').tooltip();
+        });
+    </script> -->
 </body>
 
 </html>
